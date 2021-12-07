@@ -33,6 +33,10 @@ dependencies {
     implementation group: 'org.jsoup', name: 'jsoup', version: '1.13.1'
 }
 
+jar {
+    enabled = false
+}
+
 test {
     useJUnitPlatform()
 }
