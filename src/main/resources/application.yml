@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: ${MYSQL_URL}
+      username: ${MYSQL_USERNAME}
+      password: ${MYSQL_PW} #DB ID, 비밀번호는 본인거 넣으시면 돼요
+
+
+  jpa:
+    open-in-view: true #open-in-view가 false로 잡혀있으면 세션이 Service와 Controller 사이에서 종료된다.
+    hibernate:
+      ddl-auto: create #create update none, 처음엔 create, 그 다음부턴 update를 하셔야 DB refresh가 안돼요
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+    properties:
+      hibernate:
+        format_sql: true
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB #미디어 최대 크기 지정
+
+  security:
+    user:
+      name: ${SECURITY_NAME}
+      password: ${SECURITY_PASSWORD}
+
+jwt:
+  secret: ${JWT_SECRET}
+
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error
+    org:
+      hibernate:
+        SQL: trace
