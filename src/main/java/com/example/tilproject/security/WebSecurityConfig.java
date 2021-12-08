@@ -29,7 +29,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.headers().frameOptions().disable();
         http
-//                .authorizeRequests()
+
+                .authorizeRequests()
+                .antMatchers("/").permitAll()
 //                // image 폴더를 login 없이 허용
 //                .antMatchers("/image/**").permitAll()
 //                // css 폴더를 login 없이 허용
@@ -47,7 +49,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/roles").permitAll()
 //                // 그 외 모든 요청은 인증과정 필요
 //                .anyRequest().authenticated()
-//                .and()
+                .and()
                 .exceptionHandling()
                 .authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 .and()
