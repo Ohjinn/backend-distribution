@@ -54,7 +54,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-2
           secrets: |
-            /secret/backend
+            /secret/backend3
           parse-json: false
 
       - name: Deploy to EB
