@@ -1,6 +1,6 @@
 aws:
   secretsmanager:
-    name: backend2
+    name: backend3
 cloud:
   aws:
     region:
