@@ -42,6 +42,7 @@ logging:
     org:
       hibernate:
         SQL: debug
+
 cloud:
   aws:
     credentials:
